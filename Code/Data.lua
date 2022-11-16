@@ -6,17 +6,17 @@ local playerData = DataStoreService:GetDataStore("PlayerData")
 
 local function onPlayerJoin(player) 
     local leaderstats = player:WaitForChild("leaderstats")
-    local Coins = leaderstats.Coins
-    local XP = leaderstats.XP
+    local Coins = leaderstats.Coins -- Change leaderstats.Coins to the value name you added to your leaderstats.
+    local XP = leaderstats.XP -- Change leaderstats.XP to the value name you added to your leaderstats.
 
     local playerUserId = "Player_" .. player.UserId  
     local data = playerData:GetAsync(playerUserId) 
     if data then
-        Coins.Value = data['Coins']
-	    XP.Value = data['XP']
+        Coins.Value = data['Coins'] -- Change data['Coins'] to the value you wish to save.
+	XP.Value = data['XP'] -- Change data['XP'] to the other value you wish to save.
     else
-	    Coins.Value = 0
-	    XP.Value = 0
+	Coins.Value = 0 -- Change Coins.Value to whatever you have in your leaderstats.
+	XP.Value = 0 -- Change Coins.Value to whatever you have in your leaderstats.
     end
 end
 
